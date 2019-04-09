@@ -45,10 +45,13 @@
                                     <constraint firstAttribute="trailing" secondItem="1fC-2L-8vB" secondAttribute="trailing" id="GsB-Mt-tWC"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Bi8-DE-bIb">
-                                <rect key="frame" x="16" y="144" width="343" height="324"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Bi8-DE-bIb">
+                                <rect key="frame" x="16" y="144" width="339" height="320"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bi8-DE-bIb" secondAttribute="height" multiplier="343:324" id="H7z-NT-nhC"/>
+                                    <constraint firstAttribute="width" secondItem="Bi8-DE-bIb" secondAttribute="height" multiplier="343:324" id="ZJ4-RP-8Zu"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Wt5-ev-IT3" appends="YES" id="UtA-Hf-vcC"/>
                                 </connections>
@@ -56,9 +59,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Bi8-DE-bIb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="09y-JZ-fta"/>
                             <constraint firstItem="cNu-5I-Z6q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="97V-wR-SC5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cNu-5I-Z6q" secondAttribute="trailing" constant="16" id="Cbw-j0-daa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bi8-DE-bIb" secondAttribute="trailing" constant="16" id="KeM-mk-7zh"/>
                             <constraint firstItem="cNu-5I-Z6q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KgC-7z-xGd"/>
+                            <constraint firstItem="Bi8-DE-bIb" firstAttribute="top" secondItem="cNu-5I-Z6q" secondAttribute="bottom" constant="7.5" id="kF8-gr-lxE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
