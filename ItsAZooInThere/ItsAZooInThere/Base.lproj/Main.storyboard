@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oXg-Pf-ayp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oXg-Pf-ayp">
                                 <rect key="frame" x="0.0" y="528" width="375" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -33,6 +33,7 @@
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="PwE-cj-dbq" id="n9R-Kf-Wlg"/>
+                        <outlet property="speciesLabel" destination="oXg-Pf-ayp" id="ION-up-GqF"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="IUr-3n-3NF"/>
                     </connections>
                 </viewController>
