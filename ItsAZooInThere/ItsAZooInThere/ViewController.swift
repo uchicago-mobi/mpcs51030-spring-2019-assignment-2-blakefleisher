@@ -24,20 +24,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         scrollView.delegate = self
         scrollView.contentSize = CGSize(width: 1125, height: 500)
-        
-        let pathLion = Bundle.main.path(forResource: "lionSound.mp3", ofType: nil)!
-        let pathTiger = Bundle.main.path(forResource: "tigerSound.mp3", ofType: nil)!
-        let pathBear = Bundle.main.path(forResource: "bearSound.mp3", ofType: nil)!
-        
-        let lionObj = Animal(name: "Simba", species: "Lion", age: 24, image: UIImage(named: "lionPic")!, soundPath: pathLion)
-        let tigerObj = Animal(name: "Tony", species: "Tiger", age: 67, image: UIImage(named: "tigerPic")!, soundPath: pathTiger)
-        let bearObj = Animal(name: "Ted", species: "Bear", age: 35, image: UIImage(named: "bearPic")!, soundPath: pathBear)
-        
-        animals.append(lionObj)
-        animals.append(tigerObj)
-        animals.append(bearObj)
-        animals.shuffle()
-        
+
+        createAnimalArray()
+
         speciesLabel.text = animals[0].species
         
         var xVal = 375/2
@@ -86,13 +75,27 @@ class ViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func createAnimalArray() {
+        let pathLion = Bundle.main.path(forResource: "lionSound.mp3", ofType: nil)!
+        let pathTiger = Bundle.main.path(forResource: "tigerSound.mp3", ofType: nil)!
+        let pathBear = Bundle.main.path(forResource: "bearSound.mp3", ofType: nil)!
+        
+        let lionObj = Animal(name: "Simba", species: "Lion", age: 24, image: UIImage(named: "lionPic")!, soundPath: pathLion)
+        let tigerObj = Animal(name: "Tony", species: "Tiger", age: 67, image: UIImage(named: "tigerPic")!, soundPath: pathTiger)
+        let bearObj = Animal(name: "Ted", species: "Bear", age: 35, image: UIImage(named: "bearPic")!, soundPath: pathBear)
+        
+        animals.append(lionObj)
+        animals.append(tigerObj)
+        animals.append(bearObj)
+        animals.shuffle()
+    }
+    
+    
+    
     @objc func buttonTapped(_ sender:UIButton) {
         let animal = animals[sender.tag]
         makeSound(for: animal)
         makeAlert(for: animal)
-        
- 
-        
     }
 }
 
@@ -100,15 +103,17 @@ extension ViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let xOffset = Int(scrollView.contentOffset.x)
         var currentPage = 1
-        if xOffset < 230 {
+        if xOffset < 187 {
             currentPage = 0
-        } else if xOffset > 585 {
+        } else if xOffset > 562 {
             currentPage = 2
         }
         let currentAnimal = animals[currentPage]
         speciesLabel.text = currentAnimal.species
         
-        print(xOffset)
-        print(currentAnimal.species)
+        let screenWidth = 375
+        let topExpression: CGFloat = CGFloat(screenWidth / 2 - (xOffset % screenWidth))
+        let myAlpha: CGFloat = abs((topExpression / CGFloat(screenWidth)) * 2)
+        speciesLabel.alpha = myAlpha
     }
 }
