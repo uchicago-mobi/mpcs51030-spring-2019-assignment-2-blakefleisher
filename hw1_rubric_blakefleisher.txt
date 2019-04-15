@@ -1,0 +1,27 @@
+
+### Requirements
+
+0.5/0.5 Post intro message to course forum
+
+1/1 Textual view elements are contained inside a UIStackView
+2/2 View element size and position are set with storybaord constraints
+1/1 Supports both portrait and landscape mode (does not need to scroll)
+
+2/2 Set Default Label Text button sets label to "Default Text"
+2/2 Keyboard's done button updates label to match text field
+
+1/1 Initial placeholder image set in UIImageView
+2/2 Tapping the UIImageView opens the image picker
+2/2 Selecting an image sets the UIImageView image
+
+0.5/0.5 App icon
+0.5/0.5 Cited sources
+0.5/0.5 Compiles and runs without errors
+
+### Comments
+
+Nice work!
+
+### Score
+
+15/15
