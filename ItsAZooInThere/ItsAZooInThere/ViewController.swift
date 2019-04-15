@@ -90,8 +90,6 @@ class ViewController: UIViewController {
         animals.shuffle()
     }
     
-    
-    
     @objc func buttonTapped(_ sender:UIButton) {
         let animal = animals[sender.tag]
         makeSound(for: animal)
